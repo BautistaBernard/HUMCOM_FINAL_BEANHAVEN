@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Haven | Premium Coffee House</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <img src="images/BEANLOGO (2).png" class="logo" alt="Logo">
+            <h1>Bean<span>Haven</span></h1>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <!-- ADDED: Checkout Link -->
+                <li><a href="checkout.html" class="nav-link" style="background: #c48d5f; color: white; padding: 5px 15px; border-radius: 20px;">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">BEAN HAVEN</span>
+            <h2>Handcrafted <br> <i>Coffee</i> Experience</h2>
+            <p>Premium coffee served in a tranquil environment. Experience the art of the brew. We take pride in sourcing high-quality beans and crafting each cup with precision.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn primary-btn">Our Menu</a>
+                <a href="#about" class="btn secondary-btn">Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Brewed to Perfection</span>
+                <h2 class="section-title">Our Signature Menu</h2>
+            </div>
+            
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/espres.png" alt="Espresso"></div>
+                    <div class="menu-info">
+                        <h3>Espresso</h3>
+                        <p class="price">₱110</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Espresso', 110)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/latte.png" alt="Latte"></div>
+                    <div class="menu-info">
+                        <h3>Latte</h3>
+                        <p class="price">₱145</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Latte', 145)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/cuppoci.png" alt="Cappuccino"></div>
+                    <div class="menu-info">
+                        <h3>Cappuccino</h3>
+                        <p class="price">₱145</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Cappuccino', 145)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/mocha.png" alt="Mocha"></div>
+                    <div class="menu-info">
+                        <h3>Mocha</h3>
+                        <p class="price">₱160</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Mocha', 160)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/flatwhite.png" alt="Flat White"></div>
+                    <div class="menu-info">
+                        <h3>Flat White</h3>
+                        <p class="price">₱150</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Flat White', 150)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/caramelice.png" alt="Macchiato"></div>
+                    <div class="menu-info">
+                        <h3>Macchiato</h3>
+                        <p class="price">₱165</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Macchiato', 165)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/icelatte.png" alt="Iced Latte"></div>
+                    <div class="menu-info">
+                        <h3>Iced Latte</h3>
+                        <p class="price" data-price="155">₱155</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Iced Latte', 155)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/iceameri.png" alt="Iced Americano"></div>
+                    <div class="menu-info">
+                        <h3>Iced Americano</h3>
+                        <p class="price">₱130</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Iced Americano', 130)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/coldbrew.png" alt="Cold Brew"></div>
+                    <div class="menu-info">
+                        <h3>Cold Brew</h3>
+                        <p class="price">₱150</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Cold Brew', 150)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/nitrocold.png" alt="Nitro Cold"></div>
+                    <div class="menu-info">
+                        <h3>Nitro Cold</h3>
+                        <p class="price">₱180</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Nitro Cold', 180)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/Frappe.png" alt="Frappe"></div>
+                    <div class="menu-info">
+                        <h3>Frappe</h3>
+                        <p class="price">₱175</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Frappe', 175)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img"><img src="images/affogato.png" alt="Affogato"></div>
+                    <div class="menu-info">
+                        <h3>Affogato</h3>
+                        <p class="price">₱170</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Affogato', 170)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-grid">
+            <div class="about-image">
+                <div class="image-stack">
+                    <img src="images/interior.png" alt="Store">
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="sub-title">Our Heritage</span>
+                <h2 class="section-title">A Journey of Beans</h2>
+                <p>Every cup at Bean Haven is a labor of love. We partner with local farmers from Benguet and Sagada to bring you 100% Arabica beans that are roasted in small batches for peak freshness.</p>
+                <ul class="about-list">
+                    <li>✓ Sustainably Sourced Beans</li>
+                    <li>✓ Hand-crafted Brewing Methods</li>
+                    <li>✓ Cozy & Quiet Work Environment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="section-header">
+            <h2 class="section-title">The Haven Gallery</h2>
+        </div>
+        <div class="gallery-slider">
+            <div class="slider-track">
+                <img src="images/interior.png"> <img src="images/cups.png"> <img src="images/bean.png"> <img src="images/cofeeshot.png">
+                <img src="images/Gemini_Generated_Image_fgj7z1fgj7z1fgj7.png"> <img src="images/Gemini_Generated_Image_wf4sj0wf4sj0wf4s.png"> <img src="images/interiorambiance.png"> <img src="images/cofeeshot.png">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="section-title">Visit Us</h2>
+                <p>We’d love to hear from you or see you at our shop.</p>
+                
+                <div class="info-item">
+                    <span>📍</span>
+                    <p>2343 Rimando, Baguio City, Philippines</p>
+                </div>
+                <div class="info-item">
+                    <span>📞</span>
+                    <p>+63 912 345 6789</p>
+                </div>
+                <div class="info-item">
+                    <span>🕒</span>
+                    <p>Mon - Sun: 7:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="input-row">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <textarea placeholder="How can we help you today?" rows="5"></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-bottom">
+        <p>© 2026 Bean Haven | All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem('coffee_cart')) || [];
+
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        localStorage.setItem('coffee_cart', JSON.stringify(cart));
+        updateCartCount();
+        alert(name + " added to your order!");
+    }
+
+    function updateCartCount() {
+        document.getElementById('cart-count').innerText = cart.length;
+    }
+
+    updateCartCount();
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(current)) {
+                link.classList.add("active");
+            }
+        });
+    });
+
+    const mobileMenu = document.getElementById('mobile-menu');
+    const nav = document.querySelector('.nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileMenu.classList.toggle('is-active');
+    });
+</script>
+
+</body>
+</html>
