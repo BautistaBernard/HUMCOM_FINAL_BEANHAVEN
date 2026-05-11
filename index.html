@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preload" as="image" href="images/coffee-hero.webp">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bean Haven | Premium Coffee House</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap">
+</noscript>
+
+    <style>
+        :root {
+            --espresso: #1a0f0a; --roast: #3d2b1f; --crema: #c48d5f; --latte: #f4ece4; --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--latte); color: var(--espresso); line-height: 1.6; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(26, 15, 10, 0.95); backdrop-filter: blur(10px); padding: 15px 25px; border-bottom: 1px solid rgba(196, 141, 95, 0.2); }
+        .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 10px; color: var(--white); }
+        .brand h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+        .brand h1 span { color: var(--crema); }
+        .logo { width: 40px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-link { text-decoration: none; color: #d1c4bc; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; }
+        .hero { height: 100vh; background: #1a0f0a url('coffee-hero.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 0 20px; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4)); }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .badge { background: var(--crema); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; }
+        .hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--white); margin: 20px 0; line-height: 1.1; }
+        .btn { padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
+        .primary-btn { background: var(--crema); color: white; margin-right: 15px; }
+        .secondary-btn { border: 2px solid white; color: white; }
+    </style>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,16 +49,12 @@
 <header class="navbar">
     <div class="nav-container">
         <div class="brand">
-            <img src="images/BEANLOGO (2).png" class="logo" alt="Logo">
+            <img src="images/BEANLOGO (2).webp" class="logo" alt="Bean Haven Logo">
             <h1>Bean<span>Haven</span></h1>
         </div>
-        
         <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
-
         <nav>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
@@ -30,7 +62,6 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <!-- ADDED: Checkout Link -->
                 <li><a href="checkout.html" class="nav-link" style="background: #c48d5f; color: white; padding: 5px 15px; border-radius: 20px;">Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
@@ -38,11 +69,9 @@
 </header>
 
 <main>
-
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="badge">BEAN HAVEN</span>
             <h2>Handcrafted <br> <i>Coffee</i> Experience</h2>
             <p>Premium coffee served in a tranquil environment. Experience the art of the brew. We take pride in sourcing high-quality beans and crafting each cup with precision.</p>
             <div class="hero-btns">
@@ -53,15 +82,13 @@
     </section>
 
     <section id="menu" class="menu-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="sub-title">Brewed to Perfection</span>
-                <h2 class="section-title">Our Signature Menu</h2>
-            </div>
-            
-            <div class="menu-grid">
+        <div class="section-header">
+            <span class="sub-title">Brewed to Perfection</span>
+            <h2 class="section-title">Our Signature Menu</h2>
+        </div>
+         <div class="menu-grid">
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/espres.png" alt="Espresso"></div>
+                    <img src="images/espres.webp" alt="Espresso" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Espresso</h3>
                         <p class="price">₱110</p>
@@ -69,7 +96,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/latte.png" alt="Latte"></div>
+                    <img src="images/latte.webp" alt="Latte" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Latte</h3>
                         <p class="price">₱145</p>
@@ -77,7 +104,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/cuppoci.png" alt="Cappuccino"></div>
+                    <img src="images/cuppoci.webp" alt="Cappuccino" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Cappuccino</h3>
                         <p class="price">₱145</p>
@@ -85,7 +112,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/Mocha.png" alt="Mocha"></div>
+                    <img src="images/Mocha.webp" alt="Mocha" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Mocha</h3>
                         <p class="price">₱160</p>
@@ -93,7 +120,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/Flatwhite.png" alt="Flat White"></div>
+                    <img src="images/Flatwhite.webp" alt="Flat White" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Flat White</h3>
                         <p class="price">₱150</p>
@@ -101,7 +128,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/caramelice.png" alt="Macchiato"></div>
+                    <img src="images/caramelice.webp" alt="Macchiato" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Macchiato</h3>
                         <p class="price">₱165</p>
@@ -109,7 +136,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/icelatte.png" alt="Iced Latte"></div>
+                    <img src="images/icelatte.webp" alt="Iced Latte" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Iced Latte</h3>
                         <p class="price" data-price="155">₱155</p>
@@ -117,7 +144,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/iceameri.png" alt="Iced Americano"></div>
+                    <img src="images/iceameri.webp" alt="Iced Americano" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Iced Americano</h3>
                         <p class="price">₱130</p>
@@ -125,7 +152,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/coldbrew.png" alt="Cold Brew"></div>
+                    <img src="images/coldbrew.webp" alt="Cold Brew" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Cold Brew</h3>
                         <p class="price">₱150</p>
@@ -133,7 +160,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/nitrocold.png" alt="Nitro Cold"></div>
+                    <img src="images/nitrocold.webp" alt="Nitro Cold" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Nitro Cold</h3>
                         <p class="price">₱180</p>
@@ -141,7 +168,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/Frappe.png" alt="Frappe"></div>
+                    <img src="images/Frappe.webp" alt="Frappe" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Frappe</h3>
                         <p class="price">₱175</p>
@@ -149,7 +176,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <div class="menu-img"><img src="images/affogato.png" alt="Affogato"></div>
+                    <img src="images/affogato.webp" alt="Affogato" width="300" height="300" loading="lazy">
                     <div class="menu-info">
                         <h3>Affogato</h3>
                         <p class="price">₱170</p>
@@ -157,16 +184,11 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section id="about" class="about-section">
         <div class="about-grid">
-            <div class="about-image">
-                <div class="image-stack">
-                    <img src="images/interior.png" alt="Store">
-                </div>
-            </div>
+            <img src="images/interior.webp" alt="Interior seating area of the Bean Haven coffee shop" class="about-img">
             <div class="about-text">
                 <span class="sub-title">Our Heritage</span>
                 <h2 class="section-title">A Journey of Beans</h2>
@@ -179,20 +201,30 @@
             </div>
         </div>
     </section>
-
+    
     <section id="gallery" class="gallery-section">
         <div class="section-header">
-            <h2 class="section-title">The Haven Gallery</h2>
+            <span class="sub-title">Visual Journey</span>
+            <h2 class="section-title">Our Gallery</h2>
         </div>
         <div class="gallery-slider">
             <div class="slider-track">
-                <img src="images/interior.png"> <img src="images/cups.png"> <img src="images/bean.png"> <img src="images/cofeeshot.png">
-                <img src="images/Gemini_Generated_Image_fgj7z1fgj7z1fgj7.png"> <img src="images/Gemini_Generated_Image_wf4sj0wf4sj0wf4s.png"> <img src="images/interiorambiance.png"> <img src="images/cofeeshot.png">
+                <img src="images/interior.webp" alt="Barista preparing a fresh brew" loading="lazy">
+                <img src="images/cups.webp" alt="Close up of roasted coffee beans" loading="lazy">
+                <img src="images/bean.webp" alt="Customer relaxing in the lounge" loading="lazy">
+                <img src="images/cofeeshot.webp" alt="Artistic latte art in a ceramic cup" loading="lazy">
+                <img src="images/nitrocold.webp" alt="Artistic latte art in a ceramic cup" loading="lazy">
+                <img src="images/interior.webp" alt="Barista preparing a fresh brew" loading="lazy">
+                <img src="images/interior.webp" alt="" loading="lazy">
+                <img src="images/cup.webp" alt="" loading="lazy">
+                <img src="images/bean.webp" alt="" loading="lazy">
+                <img src="images/cofeeshot.webp" alt="" loading="lazy">
+                <img src="images/nitrocold.webp" alt="Artistic latte art in a ceramic cup" loading="lazy">
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-info">
                 <h2 class="section-title">Visit Us</h2>
@@ -227,55 +259,25 @@
 </main>
 
 <footer>
-    <div class="footer-bottom">
-        <p>© 2026 Bean Haven | All Rights Reserved.</p>
-    </div>
+    <p>© 2026 Bean Haven | All Rights Reserved.</p>
 </footer>
 
 <script>
-    let cart = JSON.parse(localStorage.getItem('coffee_cart')) || [];
-
-    function addToCart(name, price) {
-        cart.push({ name, price });
-        localStorage.setItem('coffee_cart', JSON.stringify(cart));
-        updateCartCount();
-        alert(name + " added to your order!");
+    // Cart Functionality
+    let cartCount = 0;
+    function addToCart(item, price) {
+        cartCount++;
+        document.getElementById('cart-count').innerText = cartCount;
+        alert(item + " has been added to your cart!");
     }
 
-    function updateCartCount() {
-        document.getElementById('cart-count').innerText = cart.length;
-    }
-
-    updateCartCount();
-
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 150) {
-                current = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(current)) {
-                link.classList.add("active");
-            }
-        });
-    });
-
+    // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
-    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-links');
 
     mobileMenu.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        mobileMenu.classList.toggle('is-active');
+        navLinks.classList.toggle('active');
     });
 </script>
-
 </body>
 </html>
